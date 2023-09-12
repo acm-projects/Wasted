@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">🗑Wasted🗑</h1>
+# Wasted🗑
 
 One man’s trash is another man’s treasure . . . literally if you’re using Wasted. Wasted is the one-stop app for college students to anonymously get rid of whatever, whenever. Leave the item at a popular campus location, take a quick pic, and post for your fellow classmates or university staff to combat waste generation and make their days slightly better. From over-ordering catering to that unwanted desk while moving out, get rid of wasted potential with Wasted.
 
