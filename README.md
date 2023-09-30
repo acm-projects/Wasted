@@ -80,7 +80,6 @@ One man’s trash is another man’s treasure . . . literally if you’re using 
 - Make presentations with either [Pitch](https://pitch.com/) or [Canva](https://www.canva.com/)
 
 ## The Team 🌟
-- 👾🎨
 - <b><i> [Siddarth Balaka](https://www.linkedin.com/in/siddarthbalaka/) 👾🎨</i></b>
 - <b><i> [Bhuvana	Madiraju](https://www.linkedin.com/in/bhuvana-madiraju/)🎨 </i></b>
 - <b><i> [Andrew Nguyen 👾🎨](https://www.linkedin.com/in/andrew-nguyen-bbb518177/<) </i></b>
