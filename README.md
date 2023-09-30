@@ -84,7 +84,7 @@ One man’s trash is another man’s treasure . . . literally if you’re using 
 - 👾🎨
 - <b><i> [Siddarth Balaka](https://www.linkedin.com/in/siddarthbalaka/) </i></b>
 - <b><i> [Bhuvana	Madiraju](https://www.linkedin.com/in/bhuvana-madiraju/) </i></b>
-- <b><i> [Hiba Mubeen](https://www.linkedin.com/in/hiba-mubeen/) </i></b>
+- <b><i> [Hiba Mubeen 🎨](https://www.linkedin.com/in/hiba-mubeen/) </i></b>
 - <b><i> Andrew Nguyen </i></b>
 
 - <b> [Susan Zhang](https://www.linkedin.com/in/susan-zh4ng/) </b> - Project Manager
