@@ -1,4 +1,4 @@
-# Wasted🗑
+# Andrew Wasted🗑
 One man’s trash is another man’s treasure . . . literally if you’re using Wasted. Wasted is the one-stop app for college students to anonymously get rid of whatever, whenever. Leave the item at a popular campus location, take a quick pic, and post for your fellow classmates or university staff to combat waste generation and make their days slightly better. From over-ordering catering to that unwanted desk while moving out, get rid of wasted potential with Wasted.
 
 
@@ -80,16 +80,10 @@ One man’s trash is another man’s treasure . . . literally if you’re using 
 - Make presentations with either [Pitch](https://pitch.com/) or [Canva](https://www.canva.com/)
 
 ## The Team 🌟
-- 👾🎨
 - <b><i> [Siddarth Balaka](https://www.linkedin.com/in/siddarthbalaka/) 👾🎨</i></b>
-- <b><i> [Bhuvana	Madiraju](https://www.linkedin.com/in/bhuvana-madiraju/) </i></b>
-<<<<<<< HEAD
-- <b><i> [Hiba Mubeen](https://www.linkedin.com/in/hiba-mubeen/) </i></b>
-- <b><i> Andrew Nguyen (HELP ME!) </i>https://www.linkedin.com/in/andrew-nguyen-bbb518177/</b>
-=======
+- <b><i> [Bhuvana	Madiraju](https://www.linkedin.com/in/bhuvana-madiraju/)🎨 </i></b>
+- <b><i> [Andrew Nguyen 👾🎨](https://www.linkedin.com/in/andrew-nguyen-bbb518177/<) </i></b>
 - <b><i> [Hiba Mubeen 🎨](https://www.linkedin.com/in/hiba-mubeen/) </i></b>
-- <b><i> Andrew Nguyen </i></b>
->>>>>>> 209bda301e0fd96e464d3410cb14387d6d9f7aa2
 
 
 - <b> [Susan Zhang](https://www.linkedin.com/in/susan-zh4ng/) </b> - Project Manager
