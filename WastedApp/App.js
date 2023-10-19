@@ -1,21 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// Import the required components
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import landing_page from './src/screens/landing_page';
+import LoginScreen from './src/screens/login';
+import create_account from './src/screens/create_account';
+import Homescreen from './src/screens/Homescreen'; // Correct the import name
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    const [formData, setFormData] ({firstName, Last email, password, confirmPassword})
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="LandingPage"
+          component={landing_page}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Login"
+          component={LoginScreen}
+        />
+        <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Signup"
+          component={create_account}
+        />
+        <Stack.Screen
+          options={{ headerTitle: 'WELCOME SIDDARTH' }}
+          name="Home"
+          component={Homescreen} // Make sure the import name matches
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
