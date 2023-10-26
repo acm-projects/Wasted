@@ -27,15 +27,15 @@ const LoginScreen = () => {
       style={styles.container}
       behavior="padding"
     >
-     <Text style={styles.title}>LOGIN</Text>
+     <Text style={styles.title}>log in</Text>
       <View style={styles.inputContainer}>
-        <Text style={styles.text}>Email</Text>
+        <Text style={styles.text}>email</Text>
         <TextInput
           value={email}
           onChangeText={text => setEmail(text)}
           style={styles.input}
         />
-        <Text style={styles.text}>Password</Text>
+        <Text style={styles.text}>password</Text>
         <TextInput
           value={password}
           onChangeText={text => setPassword(text)}
@@ -49,7 +49,7 @@ const LoginScreen = () => {
           style={styles.button}
           onPress={handleLogin}
         >
-          <Text style={styles.buttonText}>Let's Go!</Text>
+          <Text style={styles.buttonText}>let's go!</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -60,7 +60,7 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF5EB80',
+    backgroundColor: '#FFF5EB',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -81,7 +81,12 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   text:{
-    padding: 10
+    paddingTop: 11,
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: '#2A2D34'
+
   },
   input: {
     backgroundColor: 'white',
@@ -89,12 +94,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
     marginTop: 5,
+    borderWidth: 1
   },
   buttonContainer: {
     width: '60%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 40
   },
   button: {
     backgroundColor: 'rgba(203, 239, 226, 0.85)',
