@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ScrollView, Button, TouchableOpacity } from 'react-native';
 
 const Homescreen = () => {
   const data1x3 = Array.from({ length: 3 }, (_, index) => index + 1);
@@ -13,7 +13,15 @@ const Homescreen = () => {
   return (
     <ScrollView style={styles.container}>
       {/* Popular Items Header */}
-      <Text style={styles.header}>Popular Items:</Text>
+      <Text style={styles.header}>Recently Viewed Items:</Text>
+
+      {/**FIX ME */}
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('Camera')}
+      > 
+        <Text>Click To View Camera</Text>
+      </TouchableOpacity>
+  {/**FIX ME */}
 
       {/* 1x3 Grid for Popular Items */}
       <View style={styles.grid1x3}>
@@ -44,6 +52,7 @@ const Homescreen = () => {
         ))}
       </View>
     </ScrollView>
+  
   );
 };
 
@@ -104,6 +113,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 160, // Adjusted height
+  },
+  picture: {
+    fontSize: 15,
+    marginTop: 30,
   },
 });
 

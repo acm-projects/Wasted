@@ -17,9 +17,13 @@ const landing_page = ({ navigation }) => {
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Signup')}
-      >
+      > 
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.buttonContainer2}
+        onPress={() => navigation.navigate('Camera')}
+      ></TouchableOpacity>
     </View>
   );
 };
@@ -50,6 +54,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#000',
+    padding: 20,
+    marginTop: 10,
+    width: '80%',
+    alignItems: 'center',
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 4,
+  },
+  //navBar move it down!!!
+  buttonContainer2: {
+    backgroundColor: 'rgba(203, 239, 226, 0.85)',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'yellow',
     padding: 20,
     marginTop: 10,
     width: '80%',

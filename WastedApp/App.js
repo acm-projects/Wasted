@@ -6,11 +6,14 @@ import landing_page from './src/screens/landing_page';
 import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
-
+import Camera from './src/screens/Camera';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
+  
+  return ( 
+    /**<Text> camera page </Text>*/
+    
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -33,7 +36,13 @@ export default function App() {
           name="Home"
           component={Homescreen} // Make sure the import name matches
         />
+        <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Camera"
+          component={Camera} // Make sure the import name matches
+        />
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }
