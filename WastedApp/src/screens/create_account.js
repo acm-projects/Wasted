@@ -25,10 +25,10 @@ const create_account = () => {
       style={styles.container}
       behavior="padding"
     >
-     <Text style={styles.title}>SIGN UP</Text>
+     <Text style={styles.title}>sign up</Text>
       <View style={styles.formContainer}>
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>First and Last Name</Text>
+          <Text style={styles.label}>first and last name</Text>
           <TextInput
             value={name}
             onChangeText={text => setname(text)}
@@ -37,7 +37,7 @@ const create_account = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>School Email Address</Text>
+          <Text style={styles.label}>school email address</Text>
           <TextInput
             value={email}
             onChangeText={text => setemail(text)}
@@ -46,7 +46,7 @@ const create_account = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Create Password</Text>
+          <Text style={styles.label}>create password</Text>
           <TextInput
             value={password}
             onChangeText={text => setPassword(text)}
@@ -56,7 +56,7 @@ const create_account = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Verify Password</Text>
+          <Text style={styles.label}>verify password</Text>
           <TextInput
             value={verpassword}
             onChangeText={text => setverPassword(text)}
@@ -66,7 +66,7 @@ const create_account = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Username</Text>
+          <Text style={styles.label}>username</Text>
           <TextInput
             value={usr}
             onChangeText={text => setusr(text)}
@@ -80,7 +80,7 @@ const create_account = () => {
           style={styles.button}
           onPress={handleSignUp}
         >
-          <Text style={styles.buttonText}>Let's Go!</Text>
+          <Text style={styles.buttonText}>let's go!</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -91,13 +91,13 @@ export default create_account;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF5EB80',
+    backgroundColor: '#FFF5EB',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
-    marginTop: 20,
+    paddingTop: 60,
     color: '#2A2D34',
     textShadowColor: 'rgba(0, 0, 0, 0.25)',
     textShadowOffset: { width: 0, height: 4 },
@@ -136,9 +136,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
+    paddingBottom: 70
   },
   button: {
-    backgroundColor: 'rgba(203, 239, 226, 0.85)',
+    backgroundColor: '#E5B9AC',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#000',
