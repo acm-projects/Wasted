@@ -1,110 +1,144 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+
+const DATA = [
+  {
+    title: "Title",
+    main: {
+      temp_location: "UTD",
+      temp_category: "food"
+    },
+    image: "temp image"
+  },
+  {
+    title: "Title",
+    main: {
+    temp_location: "UTD",
+    temp_category: "jewelry"
+    },
+    image: "temp image"
+  },
+  {
+    title: "Title",
+    main: {
+    temp_location: "UTD",
+    temp_category: "furniture "
+    },
+  image: "temp image"
+  }
+]
+const Item = (props) => {
+  const {title, temp_location, temp_category, image} = props
+  return(
+    <View style={styles.item}>
+    
+      <Text style={styles.title}>{title}</Text>
+
+      <Text style={styles.image}>{image}</Text>
+
+    <View style={styles.infoView}>
+      <View style={styles.info}>
+        <Text style={{fontWeight: 'bold'}}>location: </Text>
+        <Text>{temp_location}</Text>
+      </View>
+
+      <View style={styles.info}>
+        <Text style={{fontWeight: 'bold'}}>description: </Text>
+        <Text>{temp_category}</Text>
+      </View>
+      </View>
+
+
+    </View>
+
+  )
+}
 
 const Homescreen = () => {
-  const data1x3 = Array.from({ length: 3 }, (_, index) => index + 1);
-  const data6x6 = Array.from({ length: 36 }, (_, index) => index + 1);
-  const additionalItems = Array.from({ length: 10 }, (_, index) => `A${index + 1}`); // Add more items here
+  const renderItem = ({item}) => (
+    <Item title={item.title} temp_location={item.main.temp_location} temp_category={item.main.temp_category} image={item.image}/>
+  )
+return (
+  <SafeAreaView style={styles.container}>
+    <Text style={styles.welcome}>Welcome back, Hiba!</Text>
+    <Text style={styles.header}>Current items:</Text>
 
-  const renderItem = () => (
-    <View style={styles.item} />
-  );
-
-  return (
-    <ScrollView style={styles.container}>
-      {/* Popular Items Header */}
-      <Text style={styles.header}>Popular Items:</Text>
-
-      {/* 1x3 Grid for Popular Items */}
-      <View style={styles.grid1x3}>
-        {data1x3.map((index) => (
-          <View key={index} style={styles.item1x3} />
-        ))}
-      </View>
-
-      {/* Additional Items Header */}
-      <Text style={styles.header}>Additional Items</Text>
-
-      {/* Scrollable 1xN Grid for Additional Items */}
-      <ScrollView horizontal>
-        <View style={styles.grid1xN}>
-          {additionalItems.map((item, index) => (
-            <View key={index} style={styles.item1xN} />
-          ))}
-        </View>
-      </ScrollView>
-
-      {/* Items available Header */}
-      <Text style={styles.header}>Items available</Text>
-
-      {/* 6x6 Grid for Items on Sale */}
-      <View style={styles.grid6x6}>
-        {data6x6.map((index) => (
-          <View key={index} style={styles.item6x6} />
-        ))}
-      </View>
-    </ScrollView>
-  );
+    <FlatList 
+    data={DATA} 
+    renderItem={renderItem}
+    keyExtractor={item=>item.title}
+    />
+  </SafeAreaView>
+);
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF5EB80',
+    backgroundColor: '#FFF5EB',
+    marginTop: StatusBar.currentHeight||0,
+    display: 'flex',
+    alignItems: 'center',
     height: '100%',
     width: '100%',
-    padding: 10,
+    padding: 20,
   },
-  header: {
-    fontSize: 20,
+  item:{
+    backgroundColor: '#CBEFE2',
+    padding: 10,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    justifyContent: 'space-around',
+    alignItems: 'left',
+    borderWidth: 1,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 4, height: 4 },
+    shadowRadius: 4,
+    borderRadius: 10,
+    height: 300,
+    width: 300,
+    alignSelf: 'center'
+  },
+  welcome:{
+    fontSize: 40,
     fontWeight: 'bold',
     marginTop: 30,
-  },
-  grid1x3: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
     padding: 10,
+    alignSelf: 'center',
+    textAlign: 'center'
   },
-  item1x3: {
-    flex: 1,
-    backgroundColor: 'rgba(203, 239, 226, 0.85)',
-    margin: 5,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 350, // Adjusted height
+  header:{
+  fontSize: 20,
+  fontWeight: 'bold',
+  marginTop: 20,
+  padding: 10
   },
-  grid1xN: {
+  title:{
+    textAlign: 'center',
+    alignSelf: 'center',
+    fontSize: 25,
+    fontWeight: 'bold',
+    padding: 5,
+
+  },
+  image:{
+    padding: 50,
+    alignSelf: 'center'
+  },
+  info:{
     flexDirection: 'row',
-  },
-  item1xN: {
-    flex: 1,
-    backgroundColor: 'rgba(203, 239, 226, 0.85)',
-    margin: 5,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 350, // Adjusted height
-    width: 200, // Adjusted width
-  },
-  grid6x6: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    width: '100%',
     padding: 10,
-    justifyContent: 'space-between', // Added to fill the width
+    textAlign: 'left',
+    fontWeight: 'bold'
   },
-  item6x6: {
-    flexBasis: '30%', // Adjusted flex basis
-    backgroundColor: 'rgba(203, 239, 226, 0.85)',
-    margin: 5,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 160, // Adjusted height
-  },
+  infoView:{
+    backgroundColor: 'white',
+    width: 298,
+    paddingLeft: 5,
+    marginHorizontal: -10,
+    marginVertical: -30,
+    borderRadius: 10
+  }
 });
 
 export default Homescreen;

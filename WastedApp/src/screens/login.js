@@ -15,7 +15,7 @@ const LoginScreen = () => {
     .then((userCredentials) => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
-        navigation.navigate('Home'); // Navigate to the Home screen
+        navigation.navigate('Hometab'); // Navigate to the Home screen
       })
       .catch((error) => {
         console.error(error);
