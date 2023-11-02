@@ -12,7 +12,7 @@ const Homescreen = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Popular Items Header */}
+      {/*Popular Items Header*/}
       <Text style={styles.header}>Popular Items:</Text>
 
       {/* 1x3 Grid for Popular Items */}
@@ -107,4 +107,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Homescreen;
+export default Homescreen; 
