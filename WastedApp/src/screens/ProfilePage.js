@@ -21,9 +21,9 @@ const ProfileScreen = () => {
       <Text style={styles.title}>Your Profile </Text>
       <Text style={styles.subTitle}>First and Last Name</Text>
         <View style={styles.Container}>
-          <Text>Posts</Text>
-          <Text>Claims</Text>
-          <Text>Email: {user?.email}</Text>
+          <Text> Posts </Text>
+          <Text> Claims </Text>
+          <Text >Email: {user?.email} </Text>
           <Text> Spread the Word! </Text>
           <Text> Terms and Conditions </Text>
           <Text> FAQ </Text>
