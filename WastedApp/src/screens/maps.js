@@ -62,8 +62,8 @@ function InputAutocomplete({
 }
 
 export default function maps() {
-  const [origin, setOrigin] = useState<LatLng | null>();
-  const [destination, setDestination] = useState<LatLng | null>();
+  const [origin, setOrigin] = useState<LatLng | null> ();
+  const [destination, setDestination] = useState<LatLng | null> ();
   const [showDirections, setShowDirections] = useState(false);
   const [distance, setDistance] = useState(0);
   const [duration, setDuration] = useState(0);
