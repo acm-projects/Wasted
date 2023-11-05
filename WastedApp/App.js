@@ -7,6 +7,7 @@ import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import ProfileScreen from "./src/screens/ProfilePage"
+import maps from "./src/screens/maps"
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="LandingPage"
-          component={ProfileScreen}
+          component={maps}
           options={{ headerShown: false }}
         />
         <Stack.Screen
