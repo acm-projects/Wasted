@@ -7,6 +7,7 @@ import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import tabs from './navigation/tabs';
+import create_posts from './src/screens/create_posts';
 
 const Stack = createNativeStackNavigator();
 

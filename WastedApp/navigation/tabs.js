@@ -2,32 +2,34 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Homescreen from "../src/screens/Homescreen"
 import profile from '../src/screens/profile';
-import create_posts from '../src/screens/create_posts';
+import CreatePosts from '../src/screens/create_posts';
 import React from 'react'
 
 const Tab = createBottomTabNavigator(); 
 
-const CustomTabBarButton = ({ children, onPress }) => (
+ const CustomTabBarButton = ({ children, onPress }) => (
   <TouchableOpacity
     style={{
-      top: -30,
+      top: 5,
       justifyContent: 'center',
       alignItems: 'center',
+      paddingLeft: 15,
+      paddingRight: 15
     }}
     onPress={onPress}
   >
     <View
-      style={{
-        width: 90,
-        height: 90,
-        borderRadius: 100,
-        backgroundColor: '#B6F5F2'
-      }}
+      // style={{
+      //   width: 90,
+      //   height: 90,
+      //   borderRadius: 100,
+      //   backgroundColor: '#B6F5F2'
+      // }}
     >
       {children}
     </View>
   </TouchableOpacity>
-);
+); 
 
 const tabs = () => {
   return (
@@ -36,13 +38,16 @@ const tabs = () => {
       headerShown: false,
       tabBarStyle: {
         position: 'absolute',
-        bottom: 10,
-        left: 20,
-        right: 20,
+        bottom: 0,
+        left: 0,
+        right: 0,
         elevation: 0,
         backgroundColor: '#ffffff',
-        borderRadius: 15,
-        height: 90,
+        height: 80, // Set the height according to your design
+        flexDirection: 'row', // Layout the buttons in a row
+        justifyContent: 'space-around', // Evenly distribute the buttons
+        alignItems: 'center', // Center the buttons vertically
+        paddingHorizontal: 10, // Add horizontal padding
       },
       tabBarShowLabel: false,
     }}
@@ -56,20 +61,23 @@ const tabs = () => {
                 source={require('../assets/Home.png')}
                 resizeMode='contain'
                 style ={{
-                  width: 50,
-                  height: 50,
+                  top: -5,
+                  width: 30,
+                  height: 30,
+                  paddingRight: 10,
+                  paddingLeft: 5,
                   tintColor: focused ? '#e32f45' : '#748c94'
                 }}
               />
-              <Text style ={{tintColor: focused ? '#e32f45' : '#748c94'}}>
+              {/* <Text style ={{tintColor: focused ? '#e32f45' : '#748c94'}}>
                 Home
-              </Text>
+              </Text> */}
             </View>
           ) 
         }}
         
         />
-        <Tab.Screen name="create_posts" component ={create_posts} 
+        <Tab.Screen name="create_posts" component ={CreatePosts} 
          options = {{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -77,8 +85,10 @@ const tabs = () => {
                 source={require('../assets/Createpost.png')}
                 resizeMode='contain'
                 style ={{
-                  width: 60,
-                  height: 60,
+                  width: 30,
+                  height: 30,
+                  paddingLeft: 10,
+                  paddingRight: 5,
                   tintColor: focused ? '#e32f45' : '#748c94'
                 }}
               />
@@ -98,14 +108,15 @@ const tabs = () => {
                 source={require('../assets/Profile.png')}
                 resizeMode='contain'
                 style ={{
-                  width: 40,
-                  height: 40,
+                  top: -5,
+                  width: 30,
+                  height: 30,
                   tintColor: focused ? '#e32f45' : '#748c94'
                 }}
               />
-              <Text style ={{tintColor: focused ? '#e32f45' : '#748c94'}}>
+              {/* <Text style ={{tintColor: focused ? '#e32f45' : '#748c94'}}>
                 Profile
-              </Text>
+              </Text> */}
             </View>
           ) 
         }}

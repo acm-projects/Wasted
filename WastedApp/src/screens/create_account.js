@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const create_account = () => {
   const [name, setname] = useState('');
@@ -21,11 +21,10 @@ const create_account = () => {
   }
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior="padding"
-    >
+    <SafeAreaView style={styles.safeArea}>
+    <ScrollView contentContainerStyle={styles.container}>
      <Text style={styles.title}>SIGN UP</Text>
+     <View style={styles.line} />
       <View style={styles.formContainer}>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>First and Last Name</Text>
@@ -74,6 +73,7 @@ const create_account = () => {
           />
         </View>
       </View>
+      <View style={styles.line} />
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -83,19 +83,36 @@ const create_account = () => {
           <Text style={styles.buttonText}>Let's Go!</Text>
         </TouchableOpacity>
       </View>
-    </KeyboardAvoidingView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 export default create_account;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFF5EB80',
+  safeArea: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#FFF5EB', // You can set the background color for SafeAreaView if needed
   },
+
+  container: {
+    flexGrow: 1, // This ensures that the container can grow to accommodate its children
+    justifyContent: 'center', // Centers children vertically in the container
+    alignItems: 'center', // Centers children horizontally in the container
+    backgroundColor: '#FFF5EB80',
+    paddingHorizontal: 20, // Horizontal padding
+  },
+  
+  line: {
+    alignSelf: 'stretch', // Ensure the line takes the full width
+    height: 2,
+    backgroundColor: '#D3D3D3',
+    marginVertical: 10,
+  },
+
+
+
   title: {
     marginTop: 20,
     color: '#2A2D34',
