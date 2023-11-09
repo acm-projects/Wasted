@@ -1,4 +1,4 @@
-import MapView, { LatLng, Marker } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import {
   StyleSheet,
   View,
@@ -6,11 +6,8 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import {
-  GooglePlaceDetail,
-  GooglePlacesAutocomplete,
-} from "react-native-google-places-autocomplete";
-import { GOOGLE_API_KEY } from "./src/screens/environment";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { GOOGLE_API_KEY } from "./environment";
 import Constants from "expo-constants";
 import { useRef, useState } from "react";
 import MapViewDirections from "react-native-maps-directions";
@@ -31,17 +28,11 @@ const INITIAL_POSITION = {
   longitudeDelta: LONGITUDE_DELTA,
 };
 
-type InputAutocompleteProps = {
-  label: string;
-  placeholder?: string;
-  onPlaceSelected: (details: GooglePlaceDetail | null) => void;
-};
-
 function InputAutocomplete({
   label,
   placeholder,
   onPlaceSelected,
-}: InputAutocompleteProps) {
+}) {
   return (
     <>
       <Text>{label}</Text>
@@ -62,14 +53,14 @@ function InputAutocomplete({
 }
 
 export default function maps() {
-  const [origin, setOrigin] = useState<LatLng | null> ();
-  const [destination, setDestination] = useState<LatLng | null> ();
+  const [origin, setOrigin] = useState();
+  const [destination, setDestination] = useState();
   const [showDirections, setShowDirections] = useState(false);
   const [distance, setDistance] = useState(0);
   const [duration, setDuration] = useState(0);
-  const mapRef = useRef<MapView>(null);
+  const mapRef = useRef(null);
 
-  const moveTo = async (position: LatLng) => {
+  const moveTo = async (position) => {
     const camera = await mapRef.current?.getCamera();
     if (camera) {
       camera.center = position;
@@ -86,7 +77,7 @@ export default function maps() {
     left: edgePaddingValue,
   };
 
-  const traceRouteOnReady = (args: any) => {
+  const traceRouteOnReady = (args) => {
     if (args) {
       setDistance(args.distance);
       setDuration(args.duration);
@@ -101,8 +92,8 @@ export default function maps() {
   };
 
   const onPlaceSelected = (
-    details: GooglePlaceDetail | null,
-    flag: "origin" | "destination"
+    details,
+    flag
   ) => {
     const set = flag === "origin" ? setOrigin : setDestination;
     const position = {
@@ -134,7 +125,7 @@ export default function maps() {
       </MapView>
       <View style={styles.searchContainer}>
         <InputAutocomplete
-          label="Origin"
+          label="Current Location"
           onPlaceSelected={(details) => {
             onPlaceSelected(details, "origin");
           }}
@@ -146,7 +137,7 @@ export default function maps() {
           }}
         />
         <TouchableOpacity style={styles.button} onPress={traceRoute}>
-          <Text style={styles.buttonText}>Trace route</Text>
+          <Text style={styles.buttonText}>Directions</Text>
         </TouchableOpacity>
         {distance && duration ? (
           <View>
