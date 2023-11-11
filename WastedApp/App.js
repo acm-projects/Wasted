@@ -7,6 +7,7 @@ import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import tabs from './navigation/tabs';
+import phonecamera from './src/screens/Camera';
 import create_posts from './src/screens/create_posts';
 
 const Stack = createNativeStackNavigator();
@@ -34,6 +35,16 @@ export default function App() {
           options={{ headerShown: false }}
           name="Hometab"
           component={tabs} // Make sure the import name matches
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Create-posts"
+          component={create_posts} // Make sure the import name matches
+        />
+        <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Camera"
+          component={phonecamera} // Make sure the import name matches
         />
       </Stack.Navigator>
     </NavigationContainer>

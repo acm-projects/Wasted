@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View, TextInput, TouchableO
 import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
-const create_posts = () => {
+const create_posts = ({navigation}) => {
   const [title, setTitle] = useState('');
   const [location, setlocation] = useState('');
   const [description, setDescription] = useState('');
@@ -41,7 +41,7 @@ const create_posts = () => {
       <View style={styles.line} />
 
       <View style={styles.iconsContainer}>
-        <TouchableOpacity style={styles.iconButton}>
+        <TouchableOpacity  onPress={() => navigation.navigate('Camera')} style={styles.iconButton}>
           <Image
             source={require('../../assets/Camera.png')}
             resizeMode='contain'
