@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ScrollView, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 
 // Add more items here
   const DATA = [
@@ -61,6 +61,7 @@ import { View, Text, FlatList, StyleSheet, ScrollView, SafeAreaView, StatusBar }
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.welcome}>welcome back, Hiba!</Text>
+      
       <Text style={styles.header}>current items:</Text>
 
       <FlatList 

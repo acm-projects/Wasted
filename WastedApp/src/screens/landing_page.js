@@ -12,6 +12,12 @@ const landing_page = ({ navigation }) => {
           "one man's trash is another man's treasure"
         </Text>
         <Image source={require('../../assets/wasted-logo.png')} style ={styles.logo}/>
+        
+        <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+  <Image source={require('../../assets/cameraicon.png')} style={styles.cameralogo} />
+</TouchableOpacity>
+
+      
       <View style={styles.buttonView}>
       <TouchableOpacity
         style={styles.buttonContainer}
@@ -109,5 +115,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 350,
     height: 350
+  },
+  cameralogo: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: 100,
+    height: 100,
+
   }
 });
