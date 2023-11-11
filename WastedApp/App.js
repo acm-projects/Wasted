@@ -8,6 +8,7 @@ import create_account from './src/screens/create_account';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import ProfileScreen from "./src/screens/ProfilePage"
 import maps from "./src/screens/maps"
+import tabs from '../Naviation/tabs';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="LandingPage"
-          component={maps}
+          component={landing_page}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -31,9 +32,9 @@ export default function App() {
           component={create_account}
         />
         <Stack.Screen
-          options={{ headerTitle: 'WELCOME SIDDARTH' }}
-          name="Home"
-          component={Homescreen} // Make sure the import name matches
+          options={{ headerShown: false }}
+          name="Hometab"
+          component={tabs} // Make sure the import name matches
         />
       </Stack.Navigator>
     </NavigationContainer>
