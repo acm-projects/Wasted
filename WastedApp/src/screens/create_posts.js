@@ -84,9 +84,6 @@ const create_posts = () => {
        <Text style={styles.categoryText}>Categories</Text>
       </View>
 
-     
-
-      {/* Add category selection UI here */}
       <View style={styles.categoryContainer}>
         <TouchableOpacity onPress={() => setCategory('food')}>
           <Text style={category === 'food' ? styles.categorySelected : styles.category}>Food</Text>
@@ -137,7 +134,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold', // If the category header is bold in your design
     textAlign: 'center', // Center the text inside the Text component
     color: '#000000', // Adjust the color as needed
-    // Add additional styling to match your Figma design
   },
 
   container: {
@@ -157,7 +153,6 @@ const styles = StyleSheet.create({
       // If you need the header to be touchable, replace 'View' with 'TouchableOpacity'
       alignItems: 'center', // Center the text horizontally
       padding: 20, // Add padding to increase the touchable area if it's a TouchableOpacity
-      // Add additional styling to match your Figma design
     },
     headerText: {
       fontSize: 24, // Adjust the size as needed

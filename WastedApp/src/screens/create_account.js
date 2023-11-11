@@ -111,8 +111,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 
-
-
   title: {
     marginTop: 20,
     color: '#2A2D34',

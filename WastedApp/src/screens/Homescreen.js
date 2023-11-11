@@ -1,95 +1,107 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, StatusBar } from 'react-native';
 
-const DATA = [
+// Add more items here
+const posts = [
   {
     title: "Title",
-    main: {
-      temp_location: "UTD",
-      temp_category: "food"
-    },
-    image: "temp image"
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
   },
   {
     title: "Title",
-    main: {
-    temp_location: "UTD",
-    temp_category: "jewelry"
-    },
-    image: "temp image"
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
   },
   {
     title: "Title",
-    main: {
-    temp_location: "UTD",
-    temp_category: "furniture "
-    },
-  image: "temp image"
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
+  },
+  {
+    title: "Title",
+    image: "temp image",
+    location: "myLocation",
+    description: "tempDescription"
   }
 ]
-const Item = (props) => {
-  const {title, temp_location, temp_category, image} = props
-  return(
-    <View style={styles.item}>
-    
-      <Text style={styles.title}>{title}</Text>
-
-      <Text style={styles.image}>{image}</Text>
-
-    <View style={styles.infoView}>
-      <View style={styles.info}>
-        <Text style={{fontWeight: 'bold'}}>location: </Text>
-        <Text>{temp_location}</Text>
-      </View>
-
-      <View style={styles.info}>
-        <Text style={{fontWeight: 'bold'}}>description: </Text>
-        <Text>{temp_category}</Text>
-      </View>
-      </View>
-
-
-    </View>
-
-  )
-}
 
 const Homescreen = () => {
-  const renderItem = ({item}) => (
-    <Item title={item.title} temp_location={item.main.temp_location} temp_category={item.main.temp_category} image={item.image}/>
-  )
-return (
-  <SafeAreaView style={styles.container}>
-    <Text style={styles.welcome}>Welcome back, Hiba!</Text>
-    <Text style={styles.header}>Current items:</Text>
-
-    <FlatList 
-    data={DATA} 
-    renderItem={renderItem}
-    keyExtractor={item=>item.title}
-    />
-  </SafeAreaView>
-);
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+      <Text style={styles.welcome}>welcome back, Hiba!</Text>
+      <Text style={styles.header}>current items:</Text>
+      {posts.map((post) => {
+        return (
+          <View style={styles.items}>
+            <Text style={styles.title}>{post.title}</Text>
+            <Text style={styles.image}>{post.image}</Text>
+            <View style={styles.info}>
+            <Text style={{fontWeight: 'bold'}}>location: </Text>
+            <Text>{post.location}</Text>
+            </View>
+            <View style={styles.info}>
+            <Text style={{fontWeight: 'bold'}}>description: </Text>
+            <Text>{post.description}</Text>
+            </View>
+          </View>
+        );
+      })}
+      </ScrollView>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexGrow: 1,
     backgroundColor: '#FFF5EB',
     marginTop: StatusBar.currentHeight||0,
-    display: 'flex',
-    alignItems: 'center',
     height: '100%',
     width: '100%',
     padding: 20,
   },
-  item:{
+  items:{
     backgroundColor: '#CBEFE2',
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
     justifyContent: 'space-around',
-    alignItems: 'left',
     borderWidth: 1,
     shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowOffset: { width: 4, height: 4 },
@@ -116,10 +128,9 @@ const styles = StyleSheet.create({
   title:{
     textAlign: 'center',
     alignSelf: 'center',
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
     padding: 5,
-
   },
   image:{
     padding: 50,
@@ -131,7 +142,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'bold'
   },
-  infoView:{
+  infoText:{
     backgroundColor: 'white',
     width: 298,
     paddingLeft: 5,
