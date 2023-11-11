@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image} from 'react-native';
 import React from 'react';
-//import wastedlogo from './assets/wasted-logo.png';
 
 const landing_page = ({ navigation }) => {
   return (

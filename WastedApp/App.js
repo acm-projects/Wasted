@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import landing_page from './src/screens/landing_page';
 import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
-import Homescreen from './src/screens/Homescreen'; // Correct the import name
+import tabs from './navigation/tabs';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -31,9 +32,10 @@ export default function App() {
         />
         <Stack.Screen
           options={{ headerShown: false }}
-          name="Home"
-          component={Homescreen} // Make sure the import name matches
+          name="Hometab"
+          component={tabs} // Make sure the import name matches
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
