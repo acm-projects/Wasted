@@ -39,19 +39,19 @@ export default landing_page;
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: '#FFF5EB',
+    backgroundColor: '#FFF5EB'
   },
   container: {
     flex: 1,
-    justifyContent: 'top',
+    justifyContent: 'top'
   },
   title: {
     color: '#2A2D34',
     fontSize: 60,
-    textShadowRadius: 1.75,
-    textShadowColor: '#2A2D34',
-    fontFamily: 'Sen',
-    fontStyle: 'bold',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    fontWeight: 400,
     paddingTop: 45,
     paddingLeft: 10
   },
@@ -60,9 +60,11 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     color: '#2A2D34',
     fontSize: 20,
-    fontFamily: 'Sen',
     fontStyle: 'italic',
     textAlign: 'right',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 1.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)'
   },
   buttonView:{
     paddingTop: 50,
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(203, 239, 226, 0.85)',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#2A2D34',
     padding: 20,
     marginTop: 10,
     width: 294,
@@ -86,12 +88,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4,
+    shadowRadius: 4
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#000',
+    color: '#2A2D34'
   },
   textContainer: {
     width: '80%',
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: '#000',
+    color: '#2A2D34',
     paddingTop: 20
      // Add padding to the left
   },

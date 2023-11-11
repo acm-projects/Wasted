@@ -14,6 +14,9 @@ const create_account = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredentials) => {
+        firebase.firestore().collection("users")
+          .doc(firebase.auth().currentUser.uid)
+          .set({auth, email, password})
         navigation.navigate('Home'); 
     }).catch((error)=>{
         console.log(error)
@@ -26,6 +29,7 @@ const create_account = () => {
       behavior="padding"
     >
      <Text style={styles.title}>sign up</Text>
+     <View style={styles.line}></View>
       <View style={styles.formContainer}>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>first and last name</Text>
@@ -97,23 +101,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    paddingTop: 60,
     color: '#2A2D34',
     textShadowColor: 'rgba(0, 0, 0, 0.25)',
     textShadowOffset: { width: 0, height: 4 },
     textShadowRadius: 4,
-    fontFamily: 'Sen',
     fontSize: 50,
-    fontStyle: 'normal',
-    fontWeight: '700',
     lineHeight: 50,
-    marginBottom: 30, // Adjust this spacing
+    fontWeight: '400', // You can adjust this for vertical centering
+    marginBottom: 25,
+    marginTop: 40
   },
   formContainer: {
     width: '80%',
+    height: '-20%'
   },
   inputContainer: {
     marginBottom: 20, // Add spacing between input fields
+    
   },
   label: {
     fontSize: 18,
@@ -124,7 +128,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: 'white',
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingVertical: 7,
     borderRadius: 10,
     borderColor: '#000',
     borderWidth: 1,
@@ -132,10 +136,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonContainer: {
-    width: '60%',
+    width: '50%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 20,
     paddingBottom: 70
   },
   button: {
@@ -143,8 +147,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#000',
-    padding: 20,
-    marginTop: 10,
+    padding: 10,
     width: '80%',
     alignItems: 'center',
     shadowColor: 'rgba(0, 0, 0, 0.25)',
@@ -156,4 +159,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
   },
+  line:{
+    alignSelf: 'top',
+    padding: .25, 
+    width: 400,
+    backgroundColor: '#2A2D34',
+    marginTop: 5,
+    marginBottom: 30
+
+  }
 });

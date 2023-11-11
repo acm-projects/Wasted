@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View,Image} from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('hxm220064@utdallas.edu');
+  const [password, setPassword] = useState('Hibaisawesome');
   const navigation = useNavigation();
 
   const handleLogin = (e) => {
@@ -16,6 +16,7 @@ const LoginScreen = () => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
         navigation.navigate('Home'); // Navigate to the Home screen
+
       })
       .catch((error) => {
         console.error(error);
@@ -28,6 +29,8 @@ const LoginScreen = () => {
       behavior="padding"
     >
      <Text style={styles.title}>log in</Text>
+     <View style={styles.line}></View>
+     <Image source={require('../../assets/treasure2.png')} style ={styles.logo}/>
       <View style={styles.inputContainer}>
         <Text style={styles.text}>email</Text>
         <TextInput
@@ -65,17 +68,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  titleView:{
+  justifyContent:'flex-start'
+  },
   title: {
     color: '#2A2D34',
     textShadowColor: 'rgba(0, 0, 0, 0.25)',
     textShadowOffset: { width: 0, height: 4 },
     textShadowRadius: 4,
-    fontFamily: 'Sen',
     fontSize: 50,
-    fontStyle: 'normal',
-    fontWeight: '700',
+    fontWeight: '400',
     lineHeight: 50, // You can adjust this for vertical centering
-    marginBottom: 50,
+    marginBottom: 25,
+    alignSelf: 'center',
+    
   },
   inputContainer: {
     width: '80%',
@@ -131,4 +137,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 16,
   },
+  logo: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: 170,
+    height: 170
+  },
+  line:{
+    alignSelf: 'center',
+    padding: .25, 
+    width: 350,
+    backgroundColor: '#2A2D34',
+    marginTop: 10,
+    marginBottom: 50
+
+  }
 });
