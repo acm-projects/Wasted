@@ -148,6 +148,7 @@ const Homescreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
     flexGrow: 1,
     backgroundColor: '#66C3D0',
     marginTop: StatusBar.currentHeight || 0,
@@ -155,6 +156,7 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 20,
   },
+
   items: {
     backgroundColor: '#FFF5EB',
     padding: 10,

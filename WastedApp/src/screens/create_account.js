@@ -9,6 +9,7 @@ const create_account = () => {
   const [password, setPassword] = useState('');
   const [verpassword, setverPassword] = useState('');
   const [usr, setusr] = useState('');
+
   const handleSignUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
@@ -16,11 +17,12 @@ const create_account = () => {
         firebase.firestore().collection("users")
           .doc(firebase.auth().currentUser.uid)
           .set({auth, email, password})
-        navigation.navigate('Home');
+        navigation.navigate('Home'); 
     }).catch((error)=>{
         console.log(error)
     })
   }
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -37,6 +39,7 @@ const create_account = () => {
             style={styles.input}
           />
         </View>
+
         <View style={styles.inputContainer}>
           <Text style={styles.label}>school email address</Text>
           <TextInput
@@ -45,6 +48,7 @@ const create_account = () => {
             style={styles.input}
           />
         </View>
+
         <View style={styles.inputContainer}>
           <Text style={styles.label}>create password</Text>
           <TextInput
@@ -54,6 +58,7 @@ const create_account = () => {
             secureTextEntry
           />
         </View>
+
         <View style={styles.inputContainer}>
           <Text style={styles.label}>verify password</Text>
           <TextInput
@@ -63,6 +68,7 @@ const create_account = () => {
             secureTextEntry
           />
         </View>
+
         <View style={styles.inputContainer}>
           <Text style={styles.label}>username</Text>
           <TextInput
@@ -72,6 +78,7 @@ const create_account = () => {
           />
         </View>
       </View>
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -83,7 +90,9 @@ const create_account = () => {
     </KeyboardAvoidingView>
   );
 }
+
 export default create_account;
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF5EB',
@@ -108,6 +117,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginBottom: 20, // Add spacing between input fields
+    
   },
   label: {
     fontSize: 18,
@@ -151,10 +161,11 @@ const styles = StyleSheet.create({
   },
   line:{
     alignSelf: 'top',
-    padding: .25,
+    padding: .25, 
     width: 400,
     backgroundColor: '#2A2D34',
     marginTop: 5,
     marginBottom: 30
+
   }
 });
