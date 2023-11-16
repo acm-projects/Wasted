@@ -5,9 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import landing_page from './src/screens/landing_page';
 import LoginScreen from './src/screens/login';
 import create_account from './src/screens/create_account';
+import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import tabs from './navigation/tabs';
-
-
+import create_posts from './src/screens/create_posts';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,7 +35,6 @@ export default function App() {
           name="Hometab"
           component={tabs} // Make sure the import name matches
         />
-
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -15,8 +15,8 @@ const LoginScreen = () => {
     .then((userCredentials) => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
-        navigation.navigate('Home'); // Navigate to the Home screen
-
+        //navigation.navigate('Home'); // Navigate to the Home screen
+        navigation.navigate('Hometab'); 
       })
       .catch((error) => {
         console.error(error);
@@ -45,7 +45,7 @@ const LoginScreen = () => {
           style={styles.input}
           secureTextEntry
         />
-      </View>
+      
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -54,6 +54,7 @@ const LoginScreen = () => {
         >
           <Text style={styles.buttonText}>let's go!</Text>
         </TouchableOpacity>
+      </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -85,6 +86,16 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '80%',
+    backgroundColor: '#66C3D0',
+    padding: 30,
+    borderRadius: 20,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#2A2D34',
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 4
+
   },
   text:{
     paddingTop: 11,
@@ -96,8 +107,8 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: 'white',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: 9,
+    paddingVertical: 11,
     borderRadius: 10,
     marginTop: 5,
     borderWidth: 1
@@ -106,14 +117,17 @@ const styles = StyleSheet.create({
     width: '60%',
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
     marginTop: 40
   },
   button: {
-    backgroundColor: 'rgba(203, 239, 226, 0.85)',
+    backgroundColor: '#AD8676',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#000',
-    padding: 20,
+    padding: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
     marginTop: 10,
     width: '80%',
     alignItems: 'center',
@@ -130,10 +144,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: 'white',
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: '#AD8676',
     fontWeight: '700',
     fontSize: 16,
   },
@@ -141,7 +155,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     width: 170,
-    height: 170
+    height: 170,
+    marginBottom: 15
   },
   line:{
     alignSelf: 'center',
@@ -149,7 +164,7 @@ const styles = StyleSheet.create({
     width: 350,
     backgroundColor: '#2A2D34',
     marginTop: 10,
-    marginBottom: 50
+    marginBottom: 30
 
   }
 });

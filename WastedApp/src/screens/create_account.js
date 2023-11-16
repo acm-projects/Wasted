@@ -109,11 +109,19 @@ const styles = StyleSheet.create({
     lineHeight: 50,
     fontWeight: '400', // You can adjust this for vertical centering
     marginBottom: 25,
-    marginTop: 40
+    marginTop: 20
   },
   formContainer: {
     width: '80%',
-    height: '-20%'
+    height: '-20%',
+    backgroundColor: '#66C3D0',
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 40,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 4
   },
   inputContainer: {
     marginBottom: 20, // Add spacing between input fields
@@ -143,11 +151,14 @@ const styles = StyleSheet.create({
     paddingBottom: 70
   },
   button: {
-    backgroundColor: '#E5B9AC',
+    backgroundColor: '#AD8676',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#000',
     padding: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 10,
     width: '80%',
     alignItems: 'center',
     shadowColor: 'rgba(0, 0, 0, 0.25)',
@@ -157,12 +168,12 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: 'white',
   },
   line:{
     alignSelf: 'top',
     padding: .25, 
-    width: 400,
+    width: 350,
     backgroundColor: '#2A2D34',
     marginTop: 5,
     marginBottom: 30
