@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image, ImageBackground} from 'react-native';
 import React from 'react';
-import landingBackground from '../../assets/landing-background.png';
+//import landingBackground from '../../assets/landing-background.png';
 
-const landing_page = ({ navigation }) => {
+const LandingPage = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.wrapper}>
-    <View style={styles.container}>
+    <ImageBackground
+        source={require('../../assets/landing-background.png')}
+        style={styles.container}>
         <Text style={styles.title}>w a s t e d.</Text>
         <Text style={styles.quote}>
           {' '}
@@ -17,38 +18,29 @@ const landing_page = ({ navigation }) => {
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Login')}
       >
-        
-        <Text style={styles.buttonText}>log in          </Text>
+        <Text style={styles.buttonText}>log in</Text>
       </TouchableOpacity>
-      <View style={styles.textContainer}>
         <Text style={styles.text}>don't have an account?</Text>
-      </View>
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Signup')}
       >
-        <Text></Text>
-        <Text style={styles.buttonText}>sign up           </Text>
+        <Text style={styles.buttonText}>sign up</Text>
       </TouchableOpacity>
       </View>
-    </View>
-    </SafeAreaView>
+      </ImageBackground>
   );
 };
 
-export default landing_page;
+export default LandingPage;
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    backgroundImage: `url(${landingBackground})`,
-    backgroundRepeat: 'no-repeat',
-    width: 430
-
-  },
   container: {
     flex: 1,
-    justifyContent: 'top'
+    justifyContent: 'center',
+    width: 395,
+    paddingLeft: 10,
+    paddingBottom: 160
   },
   title: {
     color: 'white',
@@ -57,19 +49,22 @@ const styles = StyleSheet.create({
     textShadowRadius: 4,
     textShadowColor: 'rgba(0, 0, 0, 0.25)',
     fontWeight: 400,
-    paddingTop: 45,
-    paddingLeft: 10
+    paddingTop: 5,
+    marginBottom: 10,
+    paddingLeft: 10,
+    justifyContent: 'flex-start'
   },
   quote: {
-    marginRight: 47,
+    marginRight: 8,
     paddingTop: 5,
     color: 'white',
     fontSize: 15,
     fontStyle: 'italic',
     textAlign: 'right',
-    textShadowOffset: { width: 0, height: 2 },
+    textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 1.5,
-    textShadowColor: 'rgba(0, 0, 0, 0.25)'
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    marginBottom: 10
   },
   buttonView:{
     paddingTop: 50,
@@ -77,9 +72,7 @@ const styles = StyleSheet.create({
     height: 45,
     alignSelf: 'center',
     fontStyle: 'bold',
-    paddingBottom: 7,
-    justifyContent: 'bottom',
-    marginRight: 30
+    paddingBottom: 15
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -87,36 +80,33 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#2A2D34',
-    padding: 20,
+    padding: 14,
+    paddingBottom: 13,
     marginTop: 10,
-    width: 294,
-    height: 45,
+    width: 280,
+    height: 50,
     alignItems: 'center',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4,
-    alignSelf: 'center'
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 2, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 3,
   },
-  buttonText: {
+ buttonText: {
     fontSize: 18,
     color: 'white'
   },
-  textContainer: {
-    width: '80%',
-    marginTop: 10,
-    alignItems: 'flex-start', // Align text to the left
-  },
   text: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#2A2D34',
-    paddingTop: 20
+    paddingTop: 25,
+    paddingBottom: 15
      // Add padding to the left
   },
   logo: {
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 90,
-    marginBottom: -50,
+    marginTop: 80,
+    marginBottom: -40,
     width: 300,
     height: 300,
     marginRight: 35

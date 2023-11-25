@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, SafeAreaView, StyleSheet, Image} from 'react-native';
 
 
-const profile = () => {
+const Profile = () => {
   return (
         <SafeAreaView style={styles.container}>
         <Text style={styles.title}>your profile</Text>
@@ -30,16 +30,19 @@ const profile = () => {
         <Text style={styles.emailpassText}>school email address:</Text>
         <Text>hxm220064@utdallas.edu</Text>
         </View>
+        <View>
+        <Text> </Text>
+        </View>
         <View style={styles.emailView}>
         <Text style={styles.emailpassText}>password:</Text>
         <Text>********</Text>
         </View>
-        <Image source={require('../../assets/treasure1.png')} style ={styles.logo}/>
+        <Image source={require('../../assets/wasted-logo.png')} style={styles.image}/> 
         </SafeAreaView>
   )
 }
 
-export default profile
+export default Profile
 
 const styles = StyleSheet.create({
   container: {
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#2A2D34',
     textShadowColor: 'rgba(0, 0, 0, 0.25)',
-    textShadowOffset: { width: 0, height: 4 },
+    textShadowOffset: { width: 2, height: 4 },
     textShadowRadius: 4,
     fontSize: 50,
     lineHeight: 50,
@@ -93,9 +96,10 @@ const styles = StyleSheet.create({
     width: 142,
     height: 142,
     alignItems: 'center',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 2,
     marginRight: 15
   },
   claims:{
@@ -107,9 +111,10 @@ const styles = StyleSheet.create({
     width: 142,
     height: 142,
     alignItems: 'center',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 2,
     marginLeft: 15
   },
   profileviewText:{
@@ -118,9 +123,10 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   emailView:{
-    margin: 20,
     alignSelf: 'flex-start',
+    alignContent: 'flex-start',
     marginLeft: 30,
+    alignItems: 'flex-start'
   },
   emailpassText:{
     fontWeight: 'bold',
@@ -140,11 +146,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white'
   },
-  logo:{
-    alignSelf: 'flex-end',
-    width: 150,
-    height: 101,
-    marginRight: 10
+  image:{
+    height: 127,
+    width: 170,
+    alignSelf: 'flex-end'
   }
-})
+});
 

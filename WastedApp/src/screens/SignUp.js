@@ -3,7 +3,7 @@ import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-const create_account = () => {
+const SignUp = () => {
   const [name, setname] = useState('');
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
@@ -91,7 +91,7 @@ const create_account = () => {
   );
 }
 
-export default create_account;
+export default SignUp;
 
 const styles = StyleSheet.create({
   container: {
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     lineHeight: 50,
     fontWeight: '400', // You can adjust this for vertical centering
     marginBottom: 25,
-    marginTop: 20
+    marginTop: 70
   },
   formContainer: {
     width: '80%',
@@ -119,9 +119,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     padding: 40,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 2, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 3,
   },
   inputContainer: {
     marginBottom: 20, // Add spacing between input fields
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
-    paddingBottom: 70
+    paddingBottom: 30
   },
   button: {
     backgroundColor: '#AD8676',
@@ -161,9 +162,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: '80%',
     alignItems: 'center',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 4,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 2, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 3,
   },
   buttonText: {
     fontSize: 18,
@@ -176,7 +178,9 @@ const styles = StyleSheet.create({
     width: 350,
     backgroundColor: '#2A2D34',
     marginTop: 5,
-    marginBottom: 30
+    marginBottom: 30,
+    margin: 20,
+    alignSelf: 'center'
 
   }
 });

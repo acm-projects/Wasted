@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     padding: 20,
-    paddingBottom: 77
+    paddingBottom: 100
   },
   items: {
     backgroundColor: '#FFF5EB',
@@ -174,9 +174,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     justifyContent: 'space-around',
     borderWidth: 1,
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 4, height: 4 },
-    shadowRadius: 4,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 2, height: 4 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 3,
     borderRadius: 20,
     height: 300,
     width: 274,
@@ -191,7 +192,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     textShadowRadius: 3,
-    textShadowOffset: 1,
     textShadowColor: 'black',
   },
   header: {
@@ -202,8 +202,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignSelf: 'center',
     textShadowRadius: 3,
-    textShadowOffset: 1,
-    textShadowColor: 'black',
+    textShadowColor: 'black'
   },
   title: {
     textAlign: 'center',
@@ -252,9 +251,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     marginBottom: -2,
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
   },
   viewPostText: {
     color: 'white',
@@ -274,9 +274,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'rgba(0, 0, 0, 0.25)',
-    shadowOffset: { width: 4, height: 4 },
-    shadowRadius: 4
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 2, height: 4}, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 2,
   },
   closeButton: {
     backgroundColor: '#AD8676',
@@ -290,9 +291,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
   },
   modalTitle:{
     fontSize: 30,
@@ -312,9 +314,10 @@ const styles = StyleSheet.create({
     borderRadius: 125,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
   },
   modalImage:{
     margin: 5,
@@ -328,9 +331,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
   },
   modalLocation:{
     flexDirection: 'row',
@@ -361,9 +365,10 @@ const styles = StyleSheet.create({
     borderRadius: 125,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
     marginRight: -150,
     marginTop: -20
   },
@@ -377,9 +382,10 @@ const styles = StyleSheet.create({
     borderRadius: 125,
     borderWidth: 1,
     borderColor: 'black',
-    shadowColor: 'gray',
-    shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 1, height: 3 }, // Shadow direction and distance
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 1,
     marginRight: -150,
     marginTop: -20
   },

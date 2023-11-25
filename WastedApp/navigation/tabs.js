@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Homescreen from "../src/screens/Homescreen"
-import profile from '../src/screens/profile';
-import CreatePosts from '../src/screens/create_posts';
+import Profile from '../src/screens/profile';
+import CreatePosts from '../src/screens/CreatePosts';
 import React from 'react'
 
 const Tab = createBottomTabNavigator(); 
@@ -31,7 +31,7 @@ const Tab = createBottomTabNavigator();
   </TouchableOpacity>
 ); 
 
-const tabs = () => {
+const Tabs = () => {
   return (
     <Tab.Navigator
     screenOptions={{
@@ -99,7 +99,7 @@ const tabs = () => {
           )
         }}
         />
-        <Tab.Screen name="Profile" component ={profile}  
+        <Tab.Screen name="Profile" component ={Profile}  
         options = {{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -126,6 +126,6 @@ const tabs = () => {
   )
 }
 
-export default tabs
+export default Tabs
 
 const styles = StyleSheet.create({})

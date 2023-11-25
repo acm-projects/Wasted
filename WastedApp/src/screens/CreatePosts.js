@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View, TextInput, TouchableO
 import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
-const create_posts = () => {
+const CreatePosts = () => {
   const [title, setTitle] = useState('');
   const [location, setlocation] = useState('');
   const [description, setDescription] = useState('');
@@ -86,13 +86,19 @@ const create_posts = () => {
 
       <View style={styles.categoryContainer}>
         <TouchableOpacity onPress={() => setCategory('food')}>
-          <Text style={category === 'food' ? styles.categorySelected : styles.category}>food</Text>
+          <View style={category === 'food' ? styles.categorySelected : styles.category}>
+            <Text>food</Text>
+            </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCategory('furniture')}>
-          <Text style={category === 'furniture' ? styles.categorySelected : styles.category}>furniture</Text>
+          <View style={category === 'furniture' ? styles.categorySelected : styles.category}>
+          <Text>furniture</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setCategory('misc')}>
-          <Text style={category === 'misc' ? styles.categorySelected : styles.category}>misc.</Text>
+          <View style={category === 'misc' ? styles.categorySelected : styles.category}>
+            <Text>misc.</Text>
+            </View>
         </TouchableOpacity>
       </View>
 
@@ -121,7 +127,7 @@ const create_posts = () => {
   )
 }
 
-export default create_posts
+export default CreatePosts;
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -144,33 +150,33 @@ const styles = StyleSheet.create({
   },
 
   line: {
-    height: 2, // Thickness of the line
-    backgroundColor: '#D3D3D3', // Color of the line
-    marginVertical: 20, // Spacing above and below the line
+    padding: .25, 
+    width: 310,
+    backgroundColor: '#2A2D34',
+    marginVertical: 10, // Spacing above and below the line
+    marginBottom: 15
   },
 
     header: {
-      color: '#2A2D34',
-      textShadowColor: 'rgba(0, 0, 0, 0.25)',
-      textShadowOffset: { width: 0, height: 4 },
-      textShadowRadius: 4,
-      fontSize: 50,
-      lineHeight: 50,
-      fontWeight: '400', // You can adjust this for vertical centering
-      marginBottom: 15,
-      marginTop: 5,
-      alignSelf: 'center'
+
+
     },
     headerText: {
-      fontSize: 24, // Adjust the size as needed
-      fontWeight: 'bold', // If the header is bold in your design
-      color: '#000000', // Adjust the color as needed
-      // Add additional styling to match your Figma design
+        color: '#2A2D34',
+        textShadowColor: 'rgba(0, 0, 0, 0.25)',
+        textShadowOffset: { width: 2, height: 4 },
+        textShadowRadius: 4,
+        fontSize: 40,
+        lineHeight: 50,
+        fontWeight: '500', // You can adjust this for vertical centering
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignSelf: 'center'
     },
 
     category: {
       alignSelf: 'center', // This centers the view horizontally within its parent
-      marginVertical: 20, 
+      margin: 10
     },
 
     iconsContainer: {
@@ -188,6 +194,10 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderColor: '#D0D0D0',
       borderRadius: 10, // Rounded corners of the button
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 1, height: 2 }, // Shadow direction and distance
+      shadowOpacity: 0.2, // Shadow opacity
+      shadowRadius: 1,
     },
     locationInputContainer: {
       flex: 1,
@@ -197,12 +207,17 @@ const styles = StyleSheet.create({
       backgroundColor: 'white', // Background color of the location input
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: '#D0D0D0'
+      borderColor: '#D0D0D0',
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 1, height: 2 }, // Shadow direction and distance
+      shadowOpacity: 0.2, // Shadow opacity
+      shadowRadius: 1
     },
     locationInput: {
       flex: 1,
       paddingHorizontal: 10, // Horizontal padding inside the input
       paddingVertical: 10, // Vertical padding inside the input
+      
     },
     locationIcon: {
       position: 'absolute',
@@ -222,46 +237,61 @@ const styles = StyleSheet.create({
       padding: 10,
       backgroundColor: 'white',
       marginBottom: 20,
-      borderRadius: 10 // increased border radius for a more rounded look
+      borderRadius: 10,// increased border radius for a more rounded look,
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 1, height: 2 }, // Shadow direction and distance
+      shadowOpacity: 0.2, // Shadow opacity
+      shadowRadius: 1,
     },
     description: {
       backgroundColor: 'white',
-      height: 120, // make the description input taller
+      height: 100, // make the description input taller
       textAlignVertical: 'top', // align text to the top for multiline input
     },
     categoryContainer: {
       flexDirection: 'row',
       justifyContent: 'space-around',
       marginBottom: 20,
-      marginTop: 10,
+      marginTop: 10
     },
     category: {
+      borderRadius: 20,
       backgroundColor: 'white', // Background color for the bubble
-      borderRadius: 18, // Adjust the border-radius to get the desired "bubble" effect
-      paddingVertical: 10, // Vertical padding
+      paddingVertical: 5, // Vertical padding
       paddingHorizontal: 20, // Horizontal padding
       marginHorizontal: 5, // Space between the bubbles
       alignItems: 'center', // Center text horizontally
       justifyContent: 'center', // Center text vertically
-      borderRadius: 20,
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 1, height: 2 }, // Shadow direction and distance
+      shadowOpacity: 0.2, // Shadow opacity
+      shadowRadius: 1,
+      borderWidth: .5,
+      borderColor: 'black'
 
     },
     categorySelected: {
+        borderRadius: 20,
       backgroundColor: '#66C3D0', // Different background color for selected category
-      borderRadius: 20,
-      paddingVertical: 10,
-      paddingHorizontal: 20,
-      marginHorizontal: 5,
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#FFFFFF', // White text color for selected category
+      paddingVertical: 5, // Vertical padding
+      paddingHorizontal: 20, // Horizontal padding
+      marginHorizontal: 5, // Space between the bubbles
+      alignItems: 'center', // Center text horizontally
+      justifyContent: 'center', // Center text vertically
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 1, height: 2 }, // Shadow direction and distance
+      shadowOpacity: 0.2, // Shadow opacity
+      shadowRadius: 1,
+      borderWidth: .5,
+      borderColor: 'black'
+      
     },
 
     switchContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: 20,
+      marginBottom: 1,
       paddingVertical: 12, // give some vertical padding to the switch container
     },
     button: {
@@ -271,7 +301,13 @@ const styles = StyleSheet.create({
       borderRadius: 10, // more rounded corners for the button
       alignItems: 'center',
       justifyContent: 'center',
-      marginBottom:56
+      marginBottom:50,
+      shadowColor: '#000', // Shadow color
+      shadowOffset: { width: 2, height: 4 }, // Shadow direction and distance
+      shadowOpacity: 0.3, // Shadow opacity
+      shadowRadius: 3,
+      borderWidth: 1,
+      borderColor: 'black'
     },
     buttonText: {
       color: '#FFFFFF',
