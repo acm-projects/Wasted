@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View,Image} from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
 const LoginScreen = () => {
@@ -28,8 +28,6 @@ const LoginScreen = () => {
       behavior="padding"
     >
      <Text style={styles.title}>log in</Text>
-     <View style={styles.line}></View>
-     <Image source={require('../../assets/treasure2.png')} style ={styles.logo}/>
       <View style={styles.inputContainer}>
         <Text style={styles.text}>email</Text>
         <TextInput
