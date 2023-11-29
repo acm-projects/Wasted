@@ -7,6 +7,8 @@ import SignUp from './src/screens/SignUp';
 import Homescreen from './src/screens/Homescreen'; // Correct the import name
 import Tabs from './navigation/tabs';
 import LandingPage from './src/screens/LandingPage';
+import PhoneCamera from './src/screens/Camera';
+import Maps from './src/screens/maps';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +36,17 @@ export default function App() {
           name="Hometab"
           component={Tabs} // Make sure the import name matches
         />
+        <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Camera"
+          component={PhoneCamera} // Make sure the import name matches
+        />
+         <Stack.Screen
+          options={{ headerTitle: '' }}
+          name="Maps"
+          component={Maps} // Make sure the import name matches
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

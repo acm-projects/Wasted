@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Switch, Image } from 'react-native';
 import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { useNavigation } from '@react-navigation/native';
+
 
 const CreatePosts = () => {
+  const navigation = useNavigation();
   const [title, setTitle] = useState('');
   const [location, setlocation] = useState('');
   const [description, setDescription] = useState('');
@@ -41,7 +44,7 @@ const CreatePosts = () => {
       <View style={styles.line} />
 
       <View style={styles.iconsContainer}>
-        <TouchableOpacity style={styles.iconButton}>
+        <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Camera')}>
           <Image
             source={require('../../assets/Camera.png')}
             resizeMode='contain'

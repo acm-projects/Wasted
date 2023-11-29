@@ -18,6 +18,7 @@ import post5 from '../../assets/posts/post5.png';
 import post6 from '../../assets/posts/post6.png';
 import post7 from '../../assets/posts/post7.png';
 import post8 from '../../assets/posts/post8.png';
+import { useNavigation } from '@react-navigation/native';
 // Add more items here
 const posts = [
   {
@@ -35,11 +36,11 @@ const posts = [
     description: 'pink jewlery holder with flowers. no chips or cracks. minor scratches are somewhat visible.',
   },
   {
-    title: 'UTD cookies',
+    title: 'UTD cupcakes',
     image: post3,
     category: 'food',
     location: 'UTD',
-    description: 'we baked too many cookies come grab some!! nut-allergy friendly cookies :)',
+    description: 'we baked too many cupcakes come grab some!! nut-allergy friendly cupcakes :)',
   },
   {
     title: 'plushies',
@@ -88,11 +89,12 @@ const Homescreen = () => {
   const claimPost = (currentPost)=>{
     setClaim({text: 'Claimed!'})
   };
+  const navigation = useNavigation();
  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={styles.welcome}>welcome back, Hiba!</Text>
+        <Text style={styles.welcome}>Welcome back, Hiba!</Text>
         <View style={styles.line}></View>
         <Text style={styles.header}>posts</Text>
         {posts.map((post) => {
@@ -136,7 +138,10 @@ const Homescreen = () => {
                   <View style={styles.modalLocation}>
                     <Text style={{ fontWeight: 'bold'}}>location: </Text>
                     <Text style={{ marginRight: 10}}>{currentPost.location}</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                      navigation.navigate('Maps');
+                      setShowModal(false);
+                    }}>
                     <Image source={require('../../assets/location-pin.png')}/>
                     </TouchableOpacity>
                   </View>
